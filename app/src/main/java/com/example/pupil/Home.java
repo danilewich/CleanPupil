@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -18,12 +15,25 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 public class Home extends Fragment implements View.OnClickListener {
 
-    private Button btnAdd;
+    private Unbinder unbinder;
+
+    @BindView(R.id.buttonAdd)
+    Button btnAdd;
+
     private TextInputLayout etEng, etRus;
     private Cursor mainCursor;
     private DBHelper myDBHelper;
@@ -46,9 +56,17 @@ public class Home extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        unbinder = ButterKnife.bind(this, view);
 
         thisContext = getActivity();
 
@@ -56,7 +74,6 @@ public class Home extends Fragment implements View.OnClickListener {
         myDBHelper.updateDataBase();
         myDB = myDBHelper.getWritableDatabase();
 
-        btnAdd = (Button) view.findViewById(R.id.buttonAdd);
         etRus = (TextInputLayout) view.findViewById(R.id.editTextRus);
         etEng = (TextInputLayout) view.findViewById(R.id.editTextEng);
         llMain = (LinearLayout) view.findViewById(R.id.ll_main);
