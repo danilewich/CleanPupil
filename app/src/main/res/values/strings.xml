@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">pupil</string>
     <string name="title_home">Словарь</string>
     <string name="title_words">Перевод</string>
@@ -7,4 +8,8 @@
     <string name="item_change">Сменить язык</string>
     <string name="item_grp">Выбрать группу</string>
     <string name="add_in_dic">Добавить в словарь</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

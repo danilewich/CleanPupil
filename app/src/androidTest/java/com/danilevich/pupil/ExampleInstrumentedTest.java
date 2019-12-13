@@ -1,4 +1,4 @@
-package com.example.pupil;
+package com.danilevich.pupil;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

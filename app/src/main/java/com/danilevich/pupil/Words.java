@@ -1,4 +1,4 @@
-package com.example.pupil;
+package com.danilevich.pupil;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -48,7 +48,6 @@ public class Words extends Fragment implements View.OnClickListener {
     Handler mHandler;
     long startTime;
 
-    /*Group groupBtn;*/
 
     public Words() {
     }
@@ -61,6 +60,7 @@ public class Words extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
+
     }
 
     @Override

@@ -1,91 +1,44 @@
-package com.example.pupil;
+package com.danilevich.pupil;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.TextView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    @BindView(R.id.navigation)
+    BottomNavigationView navigation;
+
     private ActionBar toolbar;
     private int curPageId = R.id.navigation_words;
-
-    private Words fragmentSimple;
-    private final String SIMPLE_FRAGMENT_TAG = "myfragmenttag";
-    final String LOG_TAG = "myLog";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar = getSupportActionBar();
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        ButterKnife.bind(this);
 
+        toolbar = getSupportActionBar();
         toolbar.setTitle(R.string.title_words);
+
         navigation.setSelectedItemId(R.id.navigation_words);
-        loadFragment(Words.newInstance());
+        this.loadFragment(Words.newInstance());
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        Log.d(LOG_TAG, "onCreate");
-    }
-
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(LOG_TAG, "onDestroy");
-    }
-
-    protected void onPause() {
-        super.onPause();
-        Log.d(LOG_TAG, "onPause");
-    }
-
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(LOG_TAG, "onRestart");
-    }
-
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        Log.d(LOG_TAG, "onRestoreInstanceState");
-    }
-
-    protected void onResume() {
-        super.onResume();
-        Log.d(LOG_TAG, "onResume ");
-    }
-
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.d(LOG_TAG, "onSaveInstanceState");
-    }
-
-    @Override
-    public Object onRetainCustomNonConfigurationInstance() {
-        return fragmentSimple;
-    }
-
-    protected void onStart() {
-        super.onStart();
-        Log.d(LOG_TAG, "onStart");
-    }
-
-    protected void onStop() {
-        super.onStop();
-        Log.d(LOG_TAG, "onStop");
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             if (curPageId == item.getItemId()) {
@@ -112,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void loadFragment(Fragment fragment) {
-
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_id, R.anim.fade_out);
         ft.replace(R.id.frame_container, fragment);
         ft.commit();
