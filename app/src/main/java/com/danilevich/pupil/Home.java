@@ -1,4 +1,4 @@
-package com.example.pupil;
+package com.danilevich.pupil;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -40,7 +40,7 @@ public class Home extends Fragment implements View.OnClickListener {
     private SQLiteDatabase myDB;
     private Context thisContext;
     private LinearLayout llMain;
-    List<CheckBox> allCbs = new ArrayList<CheckBox>();
+    List<CheckBox> allCbs = new ArrayList<>();
 
     public Home() {
     }

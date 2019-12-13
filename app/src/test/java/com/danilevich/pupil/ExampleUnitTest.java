@@ -1,4 +1,4 @@
-package com.example.pupil;
+package com.danilevich.pupil;
 
 import org.junit.Test;
 
