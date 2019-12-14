@@ -1,6 +1,8 @@
-package com.danilevich.pupil.presentation.view.fragment.dictionary;
+package com.danilevich.pupil.presentation.presenter;
 
 import android.widget.Toast;
+
+import com.danilevich.pupil.presentation.view.fragment.dictionary.DictionaryView;
 
 import javax.inject.Inject;
 

@@ -1,6 +1,8 @@
-package com.danilevich.pupil.presentation.view.dictionary;
+package com.danilevich.pupil.presentation.view.fragment.dictionary;
 
-public interface DictionaryView {
+import com.danilevich.pupil.presentation.view.BaseView;
 
-    void getContext();
+public interface DictionaryView extends BaseView {
+
+
 }
