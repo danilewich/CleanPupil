@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.danilevich.pupil.presentation.view.fragment.dictionary.DictionaryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import butterknife.BindView;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(R.string.title_words);
 
         navigation.setSelectedItemId(R.id.navigation_words);
-        this.loadFragment(Words.newInstance());
+        this.loadFragment(WordsFragment.newInstance());
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
@@ -48,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         toolbar.setTitle(R.string.title_home);
-                        loadFragment(Home.newInstance());
+                        loadFragment(DictionaryFragment.newInstance());
                         return true;
                     case R.id.navigation_words:
                         toolbar.setTitle(R.string.title_words);
-                        loadFragment(Words.newInstance());
+                        loadFragment(WordsFragment.newInstance());
                         return true;
                     case R.id.navigation_settings:
                         toolbar.setTitle(R.string.title_settings);
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_id, R.anim.fade_out);
-        ft.replace(R.id.frame_container, fragment);
+        ft.replace(R.id.fragment_container, fragment);
         ft.commit();
     }
 }

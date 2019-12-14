@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.danilevich.pupil.DictionaryFragment">
+    tools:context=".presentation.view.fragment.dictionary.DictionaryFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_dictionary"
@@ -14,6 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/abc_vector_test"
         android:layout_margin="16dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
