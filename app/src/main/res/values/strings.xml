@@ -8,8 +8,6 @@
     <string name="item_change">Сменить язык</string>
     <string name="item_grp">Выбрать группу</string>
     <string name="add_in_dic">Добавить в словарь</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test">Test</string>
 
 </resources>

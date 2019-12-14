@@ -24,7 +24,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Words extends Fragment implements View.OnClickListener {
+public class WordsFragment extends Fragment implements View.OnClickListener {
 
     Cursor c = null;
     Cursor cc = null;
@@ -49,11 +49,11 @@ public class Words extends Fragment implements View.OnClickListener {
     long startTime;
 
 
-    public Words() {
+    public WordsFragment() {
     }
 
-    public static Words newInstance() {
-        return new Words();
+    public static WordsFragment newInstance() {
+        return new WordsFragment();
     }
 
     public void onCreate(Bundle savedInstanceState) {
