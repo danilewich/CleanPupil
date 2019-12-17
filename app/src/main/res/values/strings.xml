@@ -8,6 +8,8 @@
     <string name="item_change">Сменить язык</string>
     <string name="item_grp">Выбрать группу</string>
     <string name="add_in_dic">Добавить в словарь</string>
+
+    <string name="item_search">Поиск</string>
     <string name="test">Test</string>
 
 </resources>

@@ -11,6 +11,11 @@ public class Words {
     @DatabaseField(columnName = "name")
     String name;
 
+    public Words(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
