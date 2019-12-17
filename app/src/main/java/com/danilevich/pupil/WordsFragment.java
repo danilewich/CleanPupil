@@ -60,7 +60,6 @@ public class WordsFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
-
     }
 
     @Override
